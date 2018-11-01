@@ -1,28 +1,19 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { RemoteUserList } from "./RemoteUserListWithHooks";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+function App() {
+  const [size, setSize] = useState(10);
+  return (
+    <div className="App">
+      <label>Number of users displayed </label>
+      <select value={size} onChange={e => setSize(e.target.value)}>
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="100">100</option>
+      </select>
+      <RemoteUserList size={size} />
+    </div>
+  );
 }
 
 export default App;

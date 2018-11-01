@@ -12,3 +12,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.users__container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.users__user {
+  padding: 4px;
+}
+
+.users__name {
+  text-transform: capitalize;
+}
